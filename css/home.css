@@ -1,0 +1,43 @@
+body {
+    margin: 0px;
+}
+
+/* Navigation styles */
+.top_nav {
+    overflow: hidden;
+    background-color: #d1c4e9;
+    border-bottom: 20px solid #660099;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav_links a {
+    float: right;
+    color: black;
+    text-align: end;
+    padding: 30px 20px;
+    height: 100%;
+    text-decoration: none;
+    font-size: 17px;
+    margin-bottom: 0;
+    font-family: monospace;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.nav_links a:hover {
+    background-color: #660099;
+    color: white;
+    font-size: 140%;
+}
+
+.logo {
+    float: left;
+    margin: 15px;
+    height: 70px;
+}
+
+/* Body styles */
+
+/* Footer styles */
