@@ -10,6 +10,8 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
+    position: relative; /* Added to position relative to its context */
+    z-index: 2; /* Ensures the header stays above the image */
 }
 
 .nav_links a {
@@ -38,6 +40,132 @@ body {
     height: 70px;
 }
 
+/* Hero styles */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: calc(
+        (100vh - 100px) * 0.6
+    ); /* 60% of the remaining height after the header */
+    overflow: hidden; /* Prevents overflow of the image */
+}
+
+.heroImg {
+    position: absolute;
+    bottom: 0; /* Aligns the bottom of the image to the bottom of the div */
+    left: 50%;
+    transform: translateX(-50%) scale(1.3); /* Centers the image horizontally and zooms in */
+    width: 100%; /* Makes the image fill the width of the section */
+    height: auto; /* Maintain aspect ratio */
+    min-height: 100%; /* Ensures it fills the height of the section */
+    object-fit: cover; /* Ensures the image covers the space while cropping the top */
+    object-position: center; /* Focuses on the top of the image */
+}
+
+.search-box {
+    position: absolute;
+    top: 50%; /* Position the search box at the center vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for centering */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items horizontally */
+    z-index: 3; /* Higher z-index to ensure it's above the image */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.9
+    ); /* Slightly more opaque background for visibility */
+    padding: 20px; /* Increased padding for better spacing */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.hero-text {
+    margin-bottom: 15px; /* Spacing between the text and the search input */
+    font-size: 24px; /* Adjust font size as needed */
+    text-align: center; /* Center the text */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Dark color for contrast */
+}
+
+.search-input-container {
+    display: flex; /* Use flexbox to align input and button */
+    align-items: center; /* Center items vertically within this container */
+    justify-content: center; /* Center horizontally */
+}
+
+.search-box input[type="text"] {
+    padding: 15px; /* Increased padding for better touch targets */
+    width: 60%; /* Set the width to 60% of the container */
+    min-width: 350px; /* Minimum width to maintain usability */
+    font-size: 16px;
+    border: 2px solid #ccc; /* Thicker border for visibility */
+    border-radius: 30px; /* Fully rounded corners for a modern look */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color */
+    outline: none; /* Remove default outline */
+    background: linear-gradient(
+        90deg,
+        #f0f4f8,
+        #e8eff5
+    ); /* Light gradient background */
+}
+
+.search-box input[type="text"]:focus {
+    border-color: #660099; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5); /* Add shadow on focus */
+}
+
+.search-box button {
+    padding: 15px; /* Increased padding for button */
+    font-size: 16px;
+    background-color: #660099; /* Stylish background color */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Fully rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for button */
+    margin-left: 10px; /* Space between input and button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+}
+
+.search-box button:hover {
+    background-color: #5755e5; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+
+.search-box button:active {
+    transform: translateY(1px); /* Move down on click */
+}
+
 /* Body styles */
 
 /* Footer styles */
+footer {
+    background-color: #373738; /* Background color for the footer */
+    padding: 20px 0; /* Vertical padding to center the <ul> and <li> elements */
+    text-align: center; /* Center text inside the footer */
+}
+
+footer ul {
+    display: inline-block; /* Display the <ul> as an inline-block element */
+    vertical-align: top; /* Ensure all elements align next to one another */
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove default bullet points */
+}
+
+footer li {
+    display: inline; /* Display <li> elements inline */
+    padding: 0 15px; /* Padding to center text inside <li> elements */
+}
+
+footer li a {
+    color: white; /* Text color for the links */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for link color */
+}
+
+footer li a:hover {
+    color: #6c63ff; /* Change link color on hover */
+}
